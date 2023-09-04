@@ -46,7 +46,7 @@ $$
 #### 模型训练train
 划分训练集与测试集，将Waving Trees前200张图片作为训练集，剩下的作为测试集，对于训练集中的每一张bmp图片，执行无mask的match_gaussian、update_model、show_images三个操作，完成对GMM模型的训练。
 #### 模型测试test
-对于测试集中的每一张图片执行带mask的match_gaussian、形态学操作（腐蚀和膨胀）、生成imagebox（利用show_image展示分割的结果）。同时按照视频和图像两种格式输出结果。(详细结果见视频：BackgroundDetection/result_k5.mp4)
+对于测试集中的每一张图片执行带mask的match_gaussian、形态学操作（腐蚀和膨胀）、生成imagebox（利用show_image展示分割的结果）。同时按照视频和图像两种格式输出结果。(详细结果见视频:```BackgroundDetection/result_k5.mp4```)
 ![Alt text](BackgroundDetection/resultk5.png)
 ## 基于均值漂移（Mean Shift）的视频目标跟踪算法
 ### 1.背景介绍
@@ -103,6 +103,6 @@ $$
 
 其中 $g(x)=-K'(x)$，在迭代过程中，当最后漂移距离小于阈值（本次实验设定为0.5）或者达到设定的最大迭代次数，则完成了Mean Shift迭代。
 ### 3.结果测试
-<video src="VideoObjectTracking/result.mp4"></video>
+见视频（```VideoObjectTracking/result.mp4```）
 
 > 如有谬误，敬请指正，部分代码参考github代码，以及一些blog
