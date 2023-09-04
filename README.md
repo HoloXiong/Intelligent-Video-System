@@ -62,10 +62,14 @@ Mean Shift在对目标进行跟踪过程主要包含以下步骤：
 目标模型的选取主要是为了确定跟踪目标所在的区域，主要方法是通过人工框选跟踪目标。用{Zi}i=1...n表示n个像素的位置，我们将框选的区域灰度颜色空间划分为m个相等区间的灰度直方图，则目标模型qu的概率密度可以表示为：
 
 $$
-q_u=C \sum_{i=1}^n K\left(\left\|z_i^*\right\|^2\right) \delta\left[b\left(z_i\right)-u\right]
+\begin{aligned}
+& q_u=C \sum_{i=1}^n K\left(\left\|z_i^*\right\|^2\right) \delta\left[b\left(z_i\right)-u\right] \\
+& C=1 / \sum_{i=1}^n K\left(\left\|z_i^*\right\|^2\right) \\
+& z_i^*=\left(\frac{\left(x_i-x_0\right)^2+\left(y_i-y_0\right)^2}{x_0^2+y_0^2}\right)^{0.5}
+\end{aligned}
 $$
 
-其中 $C$ 为归一化系数，$K$ 是核函数，本次实验使用的是 $Epanechikov$ 核函数，$b(zi)$ 表示该像素所处的直方图区间，$u$ 是直方图颜色索引，$\delta$ 判断框选区域某个像素是否是直方图中的第 $u$ 个索引（是：1，否：0），$z_i^*$ 是以框选区域中心为原点归一化后的像素位置。
+其中 $C$ 为归一化系数, $K$ 是核函数, 本次实验使用的是 $Epanechikov$ 核函数, $b(zi)$ 表示该像素所处的直方图区间, $u$ 是直方图颜色索引, $\delta$ 判断框选区域某个像素是否是直方图中的第 $u$ 个索引（是：1，否：0）, $z_i^*$ 是以框选区域中心为原点归一化后的像素位置。
 #### 候选模型
 候选模型在视频下一帧中得到，首先根据前一帧的框选目标中心f0为搜索中心，得到候选目标的中心 $f$ ，计算区域直方图，可得到候选模型的概率密度为：
 
