@@ -66,11 +66,9 @@ q_u=C \sum_{i=1}^n K\left(\left\|z_i^*\right\|^2\right) \delta\left[b\left(z_i\r
 $$
 
 其中
+
 $$
 C=1 / \sum_{i=1}^n K\left(\left\|z_i^*\right\|^2\right)
-$$
-$$
-z_i^*=\left(\frac{\left(x_i-x_0\right)^2+\left(y_i-y_0\right)^2}{x_0^2+y_0^2}\right)^{0.5}
 $$
 
 其中 $C$ 为归一化系数, $K$ 是核函数, 本次实验使用的是 $Epanechikov$ 核函数, $b(zi)$ 表示该像素所处的直方图区间, $u$ 是直方图颜色索引, $\delta$ 判断框选区域某个像素是否是直方图中的第 $u$ 个索引（是：1，否：0）, $z_i^*$ 是以框选区域中心为原点归一化后的像素位置。
